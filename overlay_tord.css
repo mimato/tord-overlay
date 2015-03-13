@@ -1,0 +1,149 @@
+
+/* Change this background color to whatever your overlay chromakey is set to */
+/*#Overlay { background: #0f0; }*/
+
+#mainDiv { background: #0f0; width: 100%; height: 100%; z-index: -1;}
+
+img { position: absolute; }
+div { position: absolute; }
+
+a {
+/*
+  position: relative;
+ */
+  font-family: 'LiberationSans',helvetica;
+  font-weight: bold;
+}
+
+#OverlayBottom { top: 92%; bottom: 0; right: 15%; left: 15%; text-align: center;
+    background-color: black;
+    color: white;
+    padding-top: 2px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+}
+
+
+.LeftSide {
+    right: 65%;
+    height: 100%;
+    left: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.Middle {
+    right: 35%;
+    left: 35%;
+    height: 100%;
+
+}
+
+.RightSide {
+    left: 65%;
+    height: 100%;
+    right: 0;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.NoOverflow { overflow: hidden; }
+
+
+#ClockPeriodNumber,#ClockIntermissionNumber { right: 21%; height: 30%; bottom: 13%; width: 30%;}
+#ClockPeriodNumber>a:not(.ShowPeriod) { display: none; }
+#ClockIntermissionNumber>a:not(.ShowIntermission) { display: none; }
+
+div.Middle>div.Clock {width: 56%; left: 27%;}
+
+div.Middle>div.Clock.JLT {height: 55%; top: 0%;}
+
+div.Middle>div.Clock.JLT>div.Number { top: 0%; height: 100%; Right: 0%; width: 50%; font-size: 4%;}
+div.Middle>div.Clock.JLT>div.Label { top: 0%; height: 100%; Right: 0%; width: 50%; font-size: 4%;}
+div.Middle>div.Clock.JLT>div.Time  { top: 0%; height: 100%; Left: 0%;  width: 60%; font-size: 4%;}
+
+div.Middle>div.Clock.JLT.ShowJam>div.Label { display: none; }
+div.Middle>div.Clock.JLT:not(.ShowJam)>div.Jam.Number { display: none; }
+
+div.Middle>div.Clock.JLT:not(.ShowJam)>div.Jam.Time { display: none; }
+div.Middle>div.Clock.JLT:not(.ShowLineup)>div.Lineup.Time { display: none; }
+div.Middle>div.Clock.JLT:not(.ShowTimeout)>div.Timeout.Time { display: none; }
+
+
+div.Middle>div.Clock.PI { height: 45%; top: 55%; }
+
+div.Middle>div.Clock.PI div.Time { height: 100%; bottom: 5%; Left: 0%; width: 60%; font-size: 3%;}
+div.Middle>div.Clock.PI div.Number { height: 100%; bottom: 5%; Right: 0%; width: 50%; font-size: 3%;}
+
+div.Middle>div.Clock.PI:not(.ShowPeriod)>div.Period.Number { display: none; }
+div.Middle>div.Clock.PI:not(.ShowIntermission)>div.Intermission.Number { display: none; }
+div.Middle>div.Clock.PI:not(.ShowPeriod)>div.Period.Time { display: none; }
+div.Middle>div.Clock.PI:not(.ShowIntermission)>div.Intermission.Time { display: none; }
+
+
+#OverlayBottom>div.Team div.Name { top: 0%; height: 50%; width: 78%; font-size: 3%}
+#OverlayBottom>div.Team1>div.Name {left: 0; right: 20%;}
+#OverlayBottom>div.Team2>div.Name {left: 20%; right: 0;}
+
+#OverlayBottom>div.Team>div.Name.AlternateName>a.Name { display: none; }
+#OverlayBottom>div.Team>div.Name:not(.AlternateName)>a.AlternateName { display: none; }
+
+#OverlayBottom>div.Team div.Score { top: 0; height: 80%; width: 20%; font-size: 5%;}
+#OverlayBottom>div.Team1>div.Score {right: 0; text-align: right;}
+#OverlayBottom>div.Team2>div.Score {left: 0; text-align: left;}
+
+#OverlayBottom>div.Team div.Jammer { top: 50%; height: 40%; width: 68%; font-size: 3%;}
+#OverlayBottom>div.Team1>div.Jammer {left: 5%;}
+#OverlayBottom>div.Team2>div.Jammer {right:5% ;}
+
+.IsLead {
+    color: yellow;
+}
+
+#OverlayBottom>div.Team div.Lead { top: 50%; height: 40%; width: 68%; font-size: 3%; opacity: 0;}
+#OverlayBottom>div.Team div.Lead.IsLead.NoJammer { opacity: 1; }
+#OverlayBottom>div.Team1>div.Lead {left: 5%;}
+#OverlayBottom>div.Team2>div.Lead {right:5% ;}
+
+#OverlayBottom div.Timeouts { height: 30%; bottom: 2%; width: 100%; }
+#OverlayBottom>div.Team div.Timeout {top: 0%; font-size: 1.75%;}
+#OverlayBottom>div.Team1>div.Timeouts { right: 0;}
+#OverlayBottom>div.Team1 div.Timeout3 { right: 0; }
+#OverlayBottom>div.Team1 div.Timeout2 { right: 7%; }
+#OverlayBottom>div.Team1 div.Timeout1 { right: 14%; }
+#OverlayBottom>div.Team1 div.OfficialReview { right: 21%; }
+#OverlayBottom>div.Team2>div.Timeouts { left: 0;}
+#OverlayBottom>div.Team2 div.Timeout3 { left: 0; }
+#OverlayBottom>div.Team2 div.Timeout2 { left: 7%; }
+#OverlayBottom>div.Team2 div.Timeout1 { left: 14%; }
+#OverlayBottom>div.Team2 div.OfficialReview { left: 21%; }
+
+div.Timeouts:not(.HasTimeout1)>div.Timeout1 {color: gray;}
+div.Timeouts:not(.HasTimeout2)>div.Timeout2 {color: gray;}
+div.Timeouts:not(.HasTimeout3)>div.Timeout3 {color: gray;}
+
+div.Timeouts.RunningTimeout1>div.Timeout1 {color: yellow;}
+div.Timeouts.RunningTimeout2>div.Timeout2 {color: yellow;}
+div.Timeouts.RunningTimeout3>div.Timeout3 {color: yellow;}
+
+div.Timeouts:not(.HasOfficialReview)>div.OfficialReview {color: gray;}
+
+div.Timeouts.RunningOfficialReview>div.OfficialReview {color: yellow;}
+
+
+
+#tordlogo {
+    height: 98%;
+    top: 1%;
+    left: 2%;
+    bottom: 1%;
+}
+
+#wftdalogo {
+    height: 96%;
+    top: 1%;
+    right: 2%;
+    bottom: 2%;
+}
