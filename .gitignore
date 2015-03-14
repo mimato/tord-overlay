@@ -1,0 +1,5 @@
+# Ignore all the other files that aren't already tracked
+*.html
+*.css
+*.js
+images/
